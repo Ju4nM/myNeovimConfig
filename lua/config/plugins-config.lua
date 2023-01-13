@@ -31,6 +31,9 @@ require("hop").setup()
 -- NvTerminal
 require("plugins.nvTerminal")
 
+-- Todo comments
+require("todo-comments").setup {}
+
 -- Onedark
 require("onedark").setup({
     style = "deep",

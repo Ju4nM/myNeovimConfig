@@ -27,7 +27,7 @@ local configs = {
     ttyfast = true,
     showmatch = true,
     showmode = false,
-    cursorline = true,
+    -- cursorline = true,
     syntax = "on",
     termguicolors = true,
 }

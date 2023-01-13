@@ -110,4 +110,10 @@ return require("packer").startup(function(use)
     -- Colorizer
     use 'Akianonymus/nvim-colorizer.lua'
 
+    -- Todo comments
+    use {
+        "folke/todo-comments.nvim",
+        requires = "nvim-lua/plenary.nvim",
+    }
+
 end)

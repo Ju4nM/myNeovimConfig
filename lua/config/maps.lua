@@ -20,6 +20,9 @@ local mappings = {
     { "n", "<C-j>", "10<C-e>" },
     { "n", "<C-k>", "10<C-y>" },
 
+    -- Back to previous buffer
+    { { "n", "i" }, "<C-e>", "<C-^>" },
+
     -- Moving lines or code blocks
     -- Visual Mode
     { "v", "<A-j>", ":m '>+1<CR>gv=gv" },

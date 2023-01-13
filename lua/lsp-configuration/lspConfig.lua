@@ -12,8 +12,9 @@ function KeyMap(mode, keys, result, opts)
     vim.keymap.set(mode, keys, result, options)
 end
 
-local on_attach = function()
+local on_attach = function(_, bufnr)
 
+    vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
     -- Mappings for on_attach
     local bufopts = { silent = true }
     local bufMaps = {
@@ -39,11 +40,14 @@ KeyMap('n', '<leader>dn', vim.diagnostic.goto_next, opts)
 
 function MakeConfig()
     local capabilities = vim.lsp.protocol.make_client_capabilities()
-    capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+    capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
     return {
         on_attach = on_attach,
         capabilities = capabilities,
+        -- root_dir = function (fname)
+            -- return vim.fn.getcwd()
+        -- end,
     }
 end
 
